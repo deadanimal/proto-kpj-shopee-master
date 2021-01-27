@@ -1,0 +1,525 @@
+<div class="home-content">
+    <div class="header pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-dark d-inline-block mb-0">Dashboard</h6>
+      
+                        <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class=" breadcrumb-item">
+                                    <a href="javascript:void(0)"> <i class="fas fa-home text-dark"> </i> </a>
+                                </li>
+                                <li aria-current="page" class="breadcrumb-item active">
+                                    Dashboard
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-lg-6 col-5 text-right">                    
+                        <button class="btn btn-sm btn-neutral" (click)="goPageepriscription()"> E-Prescription </button>
+                        <button class="btn btn-sm btn-neutral" (click)="goPage1()">
+                            <span> Notifications </span>
+                            <span
+                              class="badge badge-md badge-circle badge-floating badge-danger border-white"
+                            >
+                              4
+                            </span>
+                        </button>
+                    </div>
+                    <!-- <div class="col-12" style="align-items: right;">
+                        <input
+                        class=" form-control col-4"
+                        id="example-search-input"
+                        type="search"
+                        value="Tell me your secret ..."
+                        />
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="img-try col-12 col-md-8">
+                <div class="card bg-default">
+                    <div class="card-body">
+                        <carousel>
+                            <slide>
+                              <img src="assets/img/theme/team-1.jpg" alt="first slide" style="display: block; width: 100%;">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h3>First slide label</h3>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                              </div>
+                            </slide>
+                            <slide>
+                              <img src="assets/img/theme/team-2.jpg" alt="second slide" style="display: block; width: 100%;">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h3>Second slide label</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                              </div>
+                            </slide>
+                            <slide>
+                              <img src="assets/img/theme/team-3.jpg" alt="third slide" style="display: block; width: 100%;">
+                              <div class="carousel-caption d-none d-md-block">
+                                <h3>Third slide label</h3>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                              </div>
+                            </slide>
+                        </carousel>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    
+        <div class="row" style="margin-left:200px; margin-right: 200px;">
+            <div class="col-12">
+                <div class="card bg-default">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4">
+                                <button class=" btn btn-primary btn-lg align-items-center" type="button" style="display: block; width: 100%;">
+                                    <span class="mb-0 text-sm  font-weight-bold"><i class="fas fa-home "></i> Health Matters </span>
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button class=" btn btn-primary btn-lg align-items-center" type="button" style="display: block; width: 100%;">
+                                    <span class="mb-0 text-sm  font-weight-bold"><i class="fas fa-dollar-sign "></i> This Week on Shopee </span>
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button class=" btn btn-primary btn-lg align-items-center" type="button" style="display: block; width: 100%;">
+                                    <span class="mb-0 text-sm  font-weight-bold" (click)="openModal(requestPrescription)"><i class="fas fa-edit "></i> Request Prescription </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-left:100px; margin-right: 100px;">
+            <div class="col-12">
+                <div class="card bg-default">
+                    <div class="card-header bg-gray">
+                        <div class="row">
+                            <div class="col-4">
+                                <button class=" btn btn-warning align-items-center" type="button" style="display: block; width: 100%;">
+                                    <span class="mb-0 text-sm  font-weight-bold"> ACTIVE BRAND </span>
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button class=" btn btn-warning align-items-center" type="button" style="display: block; width: 100%;">
+                                    <span class="mb-0 text-sm  font-weight-bold"> UNACTIVE BRAND </span>
+                                </button>
+                            </div>
+                            <div class="col-4">
+                                <button class=" btn btn-warning align-items-center" type="button" style=" display: block; width: 100%;">
+                                    <span class="mb-0 text-sm  font-weight-bold"> NEW ARRIVAL </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img alt="..." src="assets/img/product/panadol.jpg"/>
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">PANADOL Actifast 20's</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <span class="price"> RM15.00 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img alt="..." src="assets/img/product/koolfever.jpg" />
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">KOOLFEVER Kool Fever Cool Child</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <!-- <span class="price-old"> RM16.35 </span> -->
+                                          <span class="price-new ml-1"> RM14.29 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img
+                                          alt="..."
+                                          src="assets/img/product/cetaphil.jpg"
+                                        />
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">CETAPHIL Gentle Skin Cleanser 500ml</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <span class="price"> RM61.80 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img alt="..." src="assets/img/product/dettol.jpg" />
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">DETTOL Hand Sanitizer Original 50ML</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <span class="price"> RM4.68 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-3 ml-auto mr-auto mt-5 text-center">
+                                  <button class="btn btn-primary btn-round btn-simple">
+                                    Load more...
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-left:100px; margin-right: 100px;">
+            <div class="col-12">
+                <div class="card bg-default">
+                    <div class="card-header bg-gray text-center">
+                        <h6 class="h2 text-dark d-inline-block mb-0">HOT DEALS</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                              <div class="row">
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img alt="..." src="assets/img/product/panadol.jpg"/>
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">PANADOL Actifast 20's</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <span class="price"> RM15.00 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img alt="..." src="assets/img/product/koolfever.jpg" />
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">KOOLFEVER Kool Fever Cool Child</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <!-- <span class="price-old"> RM16.35 </span> -->
+                                          <span class="price-new ml-1"> RM14.29 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img
+                                          alt="..."
+                                          src="assets/img/product/cetaphil.jpg"
+                                        />
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">CETAPHIL Gentle Skin Cleanser 500ml</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <span class="price"> RM61.80 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                  <div class="card card-product">
+                                    <div class="card-image">
+                                      <a href="javascript:;">
+                                        <img alt="..." src="assets/img/product/dettol.jpg" />
+                                      </a>
+                                    </div>
+                                    <div class="card-body">
+                                      <a href="javascript:;">
+                                        <h4 class="card-title">DETTOL Hand Sanitizer Original 50ML</h4>
+                                      </a>
+                                      <div class="card-footer">
+                                        <div class="price-container">
+                                          <span class="price"> RM4.68 </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-md-3 ml-auto mr-auto mt-5 text-center">
+                                  <button class="btn btn-primary btn-round btn-simple">
+                                    Load more...
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="img-slide col-12 col-md-8">
+                <div class="card bg-default">
+                    <div class="card-header bg-gray text-center">
+                        <h6 class="h2 text-dark d-inline-block mb-0">Brands</h6>
+                    </div>
+                    <div class="card-body">
+                        <!-- <carousel [itemsPerSlide]="itemsPerSlide"
+                                [singleSlideOffset]="singleSlideOffset"
+                                [startFromIndex]="0"
+                                [interval]="2000"
+                                [noWrap]="noWrap">
+                        <slide *ngFor="let slide of slides; let index=index">
+                            <img [src]="slide.image" alt="image slide" style="display: block; width: 100%;">
+                            <div class="carousel-caption">
+                            <h4>Brand {{index + 1}}</h4>
+                            </div>
+                        </slide>
+                        </carousel> -->
+                        <carousel [itemsPerSlide]="itemsPerSlide"
+                                [singleSlideOffset]="singleSlideOffset"
+                                [startFromIndex]="0"
+                                [interval]="2000"
+                                >
+                        <slide *ngFor="let slide of slides; let index=index">
+                            <img [src]="slide.image" alt="image slide" style="display: block; width: 50%; margin-left: auto;margin-right: auto;">
+                            <div class="carousel-caption">
+                            <h4>Brand {{index + 1}}</h4>
+                            </div>
+                        </slide>
+                        </carousel>
+                    </div>
+                </div>
+            </div>   
+        </div>
+
+        <div class="row">
+          <div class="img-slide col-12 col-md-8">
+            <div class="card bg-default">
+              <div class="card-header bg-gray text-center">
+                <h6 class="h2 text-dark d-inline-block mb-0">Review</h6>
+              </div>
+              <div class="card-body">
+                <carousel [showIndicators]="false" class="carousel-team">
+                  <slide>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-5 ml-auto">
+                          <h3 class="card-title text-white">Sarah Smith</h3>
+                          <h3 class="text-primary">• • •</h3>
+                          <h4 class="lead text-white">
+                            Take up one idea. Make that one idea your life - think
+                            of it, dream of it, live on that idea. Let the brain,
+                            muscles, nerves, every part of your body, be full of
+                            that idea, and just leave every other idea alone. This
+                            is the way to success. A single rose can be my garden...
+                            a single friend, my world.
+                          </h4>
+                          <a
+                            class="btn btn-primary mt-3"
+                            href="javascript:void(0)"
+                          >
+                            Read more
+                          </a>
+                        </div>
+                        <div class="col-md-5 p-5 ml-auto">
+                          <div class="p-3">
+                            <img
+                              alt="First slide"
+                              class="img-fluid rounded shadow transform-perspective-right"
+                              src="assets/img/theme/team-4.jpg"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </slide>
+                  <slide>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-md-5 ml-auto">
+                          <h3 class="card-title text-white">Isaac Hunter</h3>
+                          <h3 class="text-info">• • •</h3>
+                          <h4 class="lead text-white">
+                            Take up one idea. Make that one idea your life - think
+                            of it, dream of it, live on that idea. Let the brain,
+                            muscles, nerves, every part of your body, be full of
+                            that idea, and just leave every other idea alone. This
+                            is the way to success. A single rose can be my garden...
+                            a single friend, my world.
+                          </h4>
+                          <a class="btn btn-info mt-3" href="javascript:void(0)">
+                            Read more
+                          </a>
+                        </div>
+                        <div class="col-md-5 p-5 ml-auto">
+                          <div class="p-3">
+                            <img
+                              alt="First slide"
+                              class="img-fluid rounded shadow transform-perspective-right"
+                              src="assets/img/theme/team-1.jpg"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </slide>
+                </carousel>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #requestPrescription>
+  <div class="modal-header bg-default">
+    <h6 class="modal-title text-white my-auto" id="modal-title-default">
+        Prescription Details
+    </h6>
+
+    <button
+        aria-label="Close"
+        class="close"
+        data-dismiss="modal"
+        type="button"
+        (click)="closeModal()"
+    >
+        <span aria-hidden="true" class="text-white my-auto"> × </span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class=" col-12">
+        <div class=" form-group">
+        <label class=" form-control-label" for="exampleFormControlTextarea3">
+          New Message
+        </label>
+        <textarea
+          class=" form-control"
+          id="exampleFormControlTextarea3"
+          rows="3"
+        ></textarea>
+        </div>
+      </div>
+      <div class=" col-12">
+        <div class=" form-group">
+            <label class=" form-control-label" for="exampleFormControlTextarea1">
+            Picture
+          </label>
+          <input
+            class=" custom-file-input"
+            id="customFileLang"
+            lang="en"
+            type="file"
+          />
+
+          <label class=" custom-file-label" for="customFileLang">
+            Select picture
+          </label>
+        </div>
+      </div>
+      <div class=" col-lg-12 col-md-4">
+        <div class=" form-group">
+          <label class=" form-control-label" for="example4cols3Input">
+          Quantity
+          </label>
+    
+          <div class="input-group">
+            <div class="input-group-btn">
+              <button
+                class="btn btn-outline-warning btn-round"
+                id="down"
+              >
+                <i class="ni ni-fat-delete"> </i>
+              </button>
+            </div>
+            <input
+              class="form-control input-number"
+              id="myNumber"
+              type="text"
+              value="1"
+            />
+
+            <div class="input-group-btn">
+              <button
+                class="btn btn-outline-warning btn-round"
+                id="up"
+              >
+                <i class="ni ni-fat-add"> </i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class=" col-12 text-right">
+        <button class=" btn btn-default" type="button"> Proceed to Cart</button>
+        </div>
+      </div>
+  </div>
+</ng-template>

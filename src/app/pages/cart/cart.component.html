@@ -1,0 +1,107 @@
+<div class="home-content">
+    <div class="header pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-dark d-inline-block mb-0">Cart</h6>
+      
+                        <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class=" breadcrumb-item">
+                                    <a href="javascript:void(0)"> <i class="fas fa-shopping-cart text-dark"> </i> </a>
+                                </li>
+                                <li aria-current="page" class="breadcrumb-item active">
+                                    Cart
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- <div class="col-lg-6 col-5 text-right">                    
+                        <button class="btn btn-sm btn-neutral" href="javascript:void(0)"> E-Prescription </button>
+                        <button class="btn btn-sm btn-neutral" (click)="goPage1()">
+                            <span> Notifications </span>
+                            <span
+                              class="badge badge-md badge-circle badge-floating badge-danger border-white"
+                            >
+                              4
+                            </span>
+                        </button>
+                    </div> -->
+                    <!-- <div class="col-12" style="align-items: right;">
+                        <input
+                        class=" form-control col-4"
+                        id="example-search-input"
+                        type="search"
+                        value="Tell me your secret ..."
+                        />
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt--6">
+        <div class="row" style="margin-left:200px; margin-right: 200px;">
+            <div class="col-12">
+                <div class="card bg-default">
+                    <div class="card-body">
+                        
+                        <div class="media align-items-center mb-3">
+                            <div class="col-md-5 col-6">
+                              <img
+                                alt="Rounded image"
+                                class="img-fluid"
+                                src="assets/img/product/panadol.jpg"
+                              />
+                            </div>
+                            <div class="media-body">
+                              <h2 class="text-white">PANADOL Actifast 20's</h2>
+                            </div>
+                            <div class="media-body text-right">
+                              <h2 class="text-white"> RM 15.00 </h2>
+                                <div aria-label="Basic example" class=" btn-group" role="group">
+                                    <button (click)="increment()">+</button>
+                        
+                                    <div class="text-white">{{ count }}</div>
+                        
+                                    <button (click)="decrement()">-</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="media align-items-center mb-3">
+                            <div class="col-md-5 col-6">
+                              <img
+                                alt="Rounded image"
+                                class="img-fluid"
+                                src="assets/img/product/koolfever.jpg"
+                              />
+                            </div>
+                            <div class="media-body">
+                              <h2 class="text-white">KOOLFEVER Kool Fever Cool Child</h2>
+                            </div>
+                            <div class="media-body text-right">
+                              <h2 class="text-white"> RM14.29 </h2>
+                                <div aria-label="Basic example" class=" btn-group" role="group">
+                                    <button (click)="increment()">+</button>
+                        
+                                    <div class="text-white">{{ count }}</div>
+                        
+                                    <button (click)="decrement()">-</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="text-right">
+                            <button class=" btn btn-warning align-items-center" type="button" (click)="goPageCheckout()">
+                                <span class="mb-0 text-sm  font-weight-bold"> CHECKOUT </span>
+                            </button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

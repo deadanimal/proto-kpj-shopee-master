@@ -1,0 +1,365 @@
+<div class="home-content">
+    <div class="header pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-dark d-inline-block mb-0"> E-Prescription </h6>
+      
+                        <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class=" breadcrumb-item">
+                                    <a href="javascript:void(0)"> <i class="fas fa-home text-dark"> </i> </a>
+                                </li>
+                                <li aria-current="page" class="breadcrumb-item active">
+                                    E- Prescription
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- <div class="col-lg-6 col-5 text-right">                    
+                        <button class="btn btn-sm btn-neutral" (click)="goPageepriscription()"> E-Prescription </button>
+                        <button class="btn btn-sm btn-neutral" (click)="goPage1()">
+                            <span> Notifications </span>
+                            <span
+                              class="badge badge-md badge-circle badge-floating badge-danger border-white"
+                            >
+                              4
+                            </span>
+                        </button>
+                    </div> -->
+                    <!-- <div class="col-12" style="align-items: right;">
+                        <input
+                        class=" form-control col-4"
+                        id="example-search-input"
+                        type="search"
+                        value="Tell me your secret ..."
+                        />
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt--6">
+        <div class="card mb-10" style="margin-left:100px; margin-right: 100px;">
+            <div class="card-body">
+                <div class="row">
+                  <div class="col-lg-6 col-md-12">
+                    <img
+                    alt="First slide"
+                    class="d-block"
+                    src="assets/img/product/panadol.jpg"
+                    style="display: block;"
+                    (click)="openModal(viewPic)"
+                  />
+                    <!-- <carousel [showIndicators]="true">
+                      <slide>
+                        <img
+                          alt="First slide"
+                          class="d-block"
+                          src="assets/img/pages/shirt.png"
+                        />
+                      </slide>
+                      <slide>
+                        <img
+                          alt="Second slide"
+                          class="d-block"
+                          src="assets/img/pages/shorts.png"
+                        />
+                      </slide>
+                      <slide>
+                        <img
+                          alt="Third slide"
+                          class="d-block"
+                          src="assets/img/pages/tshirt.png"
+                        />
+                      </slide>
+                    </carousel> -->
+                  </div>
+                  <div class="col-lg-6 col-md-12 mx-auto">
+                    <h2 class="title">PANADOL Actifast 20's</h2>
+                    <div class="stats">
+                      <div class="stars text-warning">
+                        <i class="fas fa-star"> </i> <i class="fas fa-star"> </i>
+                        <i class="fas fa-star"> </i> <i class="fas fa-star"> </i>
+                        <i class="far fa-star"> </i>
+                        <p class="d-inline">(76 customer reviews)</p>
+                      </div>
+                    </div>
+                    <br />
+          
+                    <h2 class="main-price"> RM15.00 </h2>
+                    <h6 class="category">Description</h6>
+                    <p class="description">
+                      Eres' daring 'Grigri Fortune' swimsuit has the fit and coverage
+                      of a bikini in a one-piece silhouette. This fuchsia style is
+                      crafted from the label's sculpting peau douce fabric and has
+                      flattering cutouts through the torso and back. Wear yours with
+                      mirrored sunglasses on vacation.
+                    </p>
+                    <br />
+          
+                    <div class="row pick-size">
+                      <div class="col-lg-4 col-md-4">
+                        <label> Quantity </label>
+                        <div class="input-group">
+                          <div class="input-group-btn">
+                            <button
+                              class="btn btn-outline-warning btn-round"
+                              id="down"
+                            >
+                              <i class="ni ni-fat-delete"> </i>
+                            </button>
+                          </div>
+                          <input
+                            class="form-control input-number"
+                            id="myNumber"
+                            type="text"
+                            value="1"
+                          />
+          
+                          <div class="input-group-btn">
+                            <button
+                              class="btn btn-outline-warning btn-round"
+                              id="up"
+                            >
+                              <i class="ni ni-fat-add"> </i>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <div class="col-lg-4 col-md-4 col-sm-6">
+                        <label> Select color </label>
+                        <select
+                          class="form-control"
+                          data-trigger=""
+                          id="choices-single-default"
+                          name="choices-single-default"
+                        >
+                          <option disabled="disabled" selected="selected" value="1">
+                            Choose Color
+                          </option>
+                          <option value="2"> Black </option>
+                          <option value="3"> Gray </option>
+                          <option value="4"> White </option>
+                        </select>
+                      </div> -->
+                      <!-- <div class="col-lg-4 col-md-4 col-sm-6">
+                        <label> Select size </label>
+                        <select
+                          class="form-control form-control-sm"
+                          data-trigger=""
+                          id="choices-single-default"
+                          name="choices-single-default"
+                        >
+                          <option disabled="disabled" selected="selected">
+                            Choose size
+                          </option>
+                          <option value="0"> XS </option>
+                          <option value="1"> S </option>
+                          <option value="2"> M </option>
+                          <option value="3"> L </option>
+                          <option value="4"> XL </option>
+                        </select>
+                      </div> -->
+                    </div>
+                    <br />
+          
+                    <div class="row justify-content-start">
+                      <button class="btn btn-warning ml-3" (click)="showNotification('success')">
+                        Add to Cart <i class="ni ni-cart"> </i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="col-md-8"><h2 class="title">You may also like</h2></div>
+            <div class="row">
+              <div class="col-lg-3 col-md-6">
+                <div class="card card-product">
+                  <div class="card-image">
+                    <a (click)="openModal(viewPic)">
+                      <img
+                        class="img rounded"
+                        src="assets/img/product/dettol.jpg"
+                      />
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="category text-warning">Trending</h6>
+                    <h4 class="card-title">
+                      <a class="card-link" href="javascript:;"> Dettol Hand Sanitizer </a>
+                    </h4>
+                    <div class="card-description opacity-8 mt-2">
+                      Dolce &amp; Gabbana's 'Greta' tote has been crafted in Italy
+                      from hard-wearing red textured-leather.
+                    </div>
+                    <div class="card-footer">
+                      <div class="price-container">
+                        <span class="price"> RM15.00 </span>
+                      </div>
+                      <button
+                        class="btn btn-simple btn-warning btn-icon-only btn-sm btn-round pull-right"
+                        placement="left"
+                      >
+                        <i class="ni ni-favourite-28"> </i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="card card-product">
+                  <div class="card-image">
+                    <a (click)="openModal(viewPic)">
+                      <img
+                        class="img rounded"
+                        src="assets/img/product/cetaphil.jpg"
+                      />
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="category text-warning">Popular</h6>
+                    <h4 class="card-title">
+                      <a class="card-link" href="javascript:;"> Cetaphill 50 ml </a>
+                    </h4>
+                    <div class="card-description opacity-8 mt-2">
+                      Balmain's mid-rise skinny jeans are cut with stretch to
+                      ensure they retain their second-skin fit but move
+                      comfortably.
+                    </div>
+                    <div class="card-footer">
+                      <div class="price-container">
+                        <span class="price"> RM61.80 </span>
+                      </div>
+                      <button
+                        class="btn btn-simple btn-warning btn-icon-only btn-sm btn-round pull-right"
+                        placement="left"
+                      >
+                        <i class="ni ni-favourite-28"> </i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="card card-product">
+                  <div class="card-image">
+                    <a (click)="openModal(viewPic)">
+                      <img
+                        class="img rounded align-items-center"
+                        src="assets/img/product/dettol.jpg"
+                      />
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="category text-warning">Popular</h6>
+                    <h4 class="card-title">
+                      <a class="card-link" href="javascript:;"> Dettol Hand Sanitizer </a>
+                    </h4>
+                    <div class="card-description opacity-8 mt-2">
+                      Balenciaga's black textured-leather wallet is finished with
+                      the label's iconic 'Giant' studs. This is where you can...
+                    </div>
+                    <div class="card-footer">
+                      <div class="price-container">
+                        <span class="price"> RM14.29 </span>
+                      </div>
+                      <button
+                        class="btn btn-simple btn-warning btn-icon-only btn-sm btn-round pull-right"
+                        placement="left"
+                      >
+                        <i class="ni ni-favourite-28"> </i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                <div class="card card-product">
+                  <div class="card-image">
+                    <a (click)="openModal(viewPic)">
+                      <img
+                        class="img rounded"
+                        src="assets/img/product/koolfever.jpg"
+                      />
+                    </a>
+                  </div>
+                  <div class="card-body">
+                    <h6 class="category text-warning">Trending</h6>
+                    <h4 class="card-title">
+                      <a class="card-link" href="javascript:;"> Kool Fever </a>
+                    </h4>
+                    <div class="card-description opacity-8 mt-2">
+                      Dolce &amp; Gabbana's 'Greta' tote has been crafted in Italy
+                      from hard-wearing red textured-leather.
+                    </div>
+                    <div class="card-footer">
+                      <div class="price-container">
+                        <span class="price"> RM4.68 </span>
+                      </div>
+                      <button
+                        class="btn btn-simple btn-warning btn-icon-only btn-sm btn-round pull-right"
+                        placement="left"
+                      >
+                        <i class="ni ni-favourite-28"> </i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
+<ng-template #viewPic>
+    <div class=" modal-header">
+        <h6 class=" modal-title" id="modal-title-default">
+            Prescription Details
+        </h6>
+  
+        <button
+          aria-label="Close"
+          class=" close"
+          data-dismiss="modal"
+          type="button"
+          (click)="defaultModal.hide()"
+        >
+          <span aria-hidden="true"> × </span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <carousel>
+            <slide>
+              <img src="assets/img/product/cetaphil.jpg" alt="first slide" style="display: block; width: 100%;">
+            </slide>
+            <slide>
+              <img src="assets/img/product/koolfever.jpg" alt="second slide" style="display: block; width: 100%;">
+            </slide>
+            <slide>
+              <img src="assets/img/product/dettol.jpg" alt="third slide" style="display: block; width: 100%;">
+            </slide>
+          </carousel>
+
+          <h6 class="h2 text-dark d-inline-block mb-0"> Price: RM10.00</h6>
+          <br>
+          <h6 class="h2 text-dark d-inline-block mb-0"> Brand: Panadol</h6>
+    </div>
+
+    <div class=" modal-footer">
+  
+        <button
+          class=" btn btn-link ml-auto"
+          data-dismiss="modal"
+          type="button"
+          (click)="closeModal.hide()"
+        >
+          Close
+        </button>
+      </div>
+</ng-template>

@@ -1,0 +1,417 @@
+<div class="home-content">
+    <div class="header pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-dark d-inline-block mb-0">Checkout</h6>
+      
+                        <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class=" breadcrumb-item">
+                                    <a href="javascript:void(0)"> <i class="fas fa-sign-out-alt text-dark"> </i> </a>
+                                </li>
+                                <li aria-current="page" class="breadcrumb-item active">
+                                    Checkout
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- <div class="col-lg-6 col-5 text-right">                    
+                        <button class="btn btn-sm btn-neutral" href="javascript:void(0)"> E-Prescription </button>
+                        <button class="btn btn-sm btn-neutral" (click)="goPage1()">
+                            <span> Notifications </span>
+                            <span
+                              class="badge badge-md badge-circle badge-floating badge-danger border-white"
+                            >
+                              4
+                            </span>
+                        </button>
+                    </div> -->
+                    <!-- <div class="col-12" style="align-items: right;">
+                        <input
+                        class=" form-control col-4"
+                        id="example-search-input"
+                        type="search"
+                        value="Tell me your secret ..."
+                        />
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid mt--6">
+        <div class="wrapper">
+            
+            <div class="upper">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="container">
+                      <h3 class="title text-white mt-3">Order summary</h3>
+                      <div class="row">
+                        <div class="card">
+                          <div class="card-body">
+                            <div class="media align-items-center mb-3">
+                              <div class="col-md-5 col-6">
+                                <img
+                                  alt="Rounded image"
+                                  class="img-fluid"
+                                  src="assets/img/product/panadol.jpg"
+                                />
+                              </div>
+                              <div class="media-body">
+                                <h2 class="h6">PANADOL Actifast 20's</h2>
+                              </div>
+                              <div class="media-body text-right">
+                                <span> RM 15.00 </span>
+                              </div>
+                            </div>
+                            <div class="media align-items-center">
+                              <div class="col-md-5 col-6">
+                                <img
+                                  alt="Rounded image"
+                                  class="img-fluid"
+                                  src="assets/img/product/koolfever.jpg"
+                                />
+                              </div>
+                              <div class="media-body">
+                                <h2 class="h6 mb-0">KOOLFEVER Kool Fever Cool Child</h2>
+                              </div>
+                              <div class="media-body text-right">
+                                <span> RM 14.29 </span>
+                              </div>
+                            </div>
+                            <hr class="line-info mb-3" />
+          
+                            <form class="code-validate">
+                              <label> Discount </label>
+                              <div class="input-group">
+                                <input
+                                  aria-label="Discount"
+                                  class="form-control"
+                                  name="name"
+                                  placeholder="Discount Code"
+                                  type="text"
+                                />
+          
+                                <div class="input-group-append">
+                                  <button class="btn btn-info" type="submit">
+                                    Apply
+                                  </button>
+                                </div>
+                              </div>
+                            </form>
+                            <hr class="line-info mb-3" />
+          
+                            <div class="media align-items-center">
+                              <h3 class="h6 opacity-8 mr-3">Subtotal</h3>
+                              <div class="media-body text-right">
+                                <span> RM 29.29 </span>
+                              </div>
+                            </div>
+                            <div class="media align-items-center">
+                              <h3 class="h6 opacity-8 mr-3">Shipping</h3>
+                              <div class="media-body text-right">
+                                <span> RM 4.15 </span>
+                              </div>
+                            </div>
+                            <hr class="line-info mb-3" />
+          
+                            <div class="media align-items-center">
+                              <h3 class="h6">Total</h3>
+                              <div class="media-body text-right">
+                                <span class="font-weight-semi-bold"> RM 33.44 </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="card">
+                      <form class="js-validate">
+                        <div class="container">
+                          <h3 class="title mt-3">Billing address</h3>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <label class="labels">
+                                First name <span class="text-danger"> * </span>
+                              </label>
+                              <input
+                                aria-label="Cristopher"
+                                class="form-control"
+                                name="firstName"
+                                placeholder="Cristopher"
+                                required=""
+                                type="text"
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="labels">
+                                Last name <span class="text-danger"> * </span>
+                              </label>
+                              <input
+                                aria-label="Thompson"
+                                class="form-control"
+                                name="lastName"
+                                placeholder="Thompson"
+                                required=""
+                                type="text"
+                              />
+                            </div>
+                          </div>
+                          <br />
+          
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="js-form-message">
+                                <label class="labels">
+                                  Email address <span class="text-danger"> * </span>
+                                </label>
+                                <input
+                                  aria-label="thompson@gmail.com"
+                                  class="form-control"
+                                  name="emailAddress"
+                                  placeholder="thompson@gmail.com"
+                                  required=""
+                                  type="email"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                              <div class="js-form-message">
+                                <label class="labels"> Phone </label>
+                                <input
+                                  aria-label="+4 (0762) 230991"
+                                  class="form-control"
+                                  placeholder="+4 (0762) 230991"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <br />
+          
+                          <div class="row">
+                            <div class="col-md-8">
+                              <div class="js-form-message">
+                                <label class="labels">
+                                  Street address <span class="text-danger"> * </span>
+                                </label>
+                                <input
+                                  aria-label="420 Long Beach, CA"
+                                  class="form-control"
+                                  name="streetAddress"
+                                  placeholder="420 Long Beach, CA"
+                                  required=""
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="js-form-message">
+                                <label class="labels">
+                                  Postcode/Zip <span class="text-danger"> * </span>
+                                </label>
+                                <input
+                                  aria-label="340112"
+                                  class="form-control"
+                                  name="postcode"
+                                  placeholder="340112"
+                                  required=""
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <br />
+          
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="js-form-message mb-4">
+                                <label class="labels"> Apt, suite, etc. </label>
+                                <input
+                                  aria-label="YC7B 3UT"
+                                  class="form-control"
+                                  placeholder="YC7B 3UT"
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="js-form-message mb-4">
+                                <label class="labels">
+                                  City <span class="text-danger"> * </span>
+                                </label>
+                                <input
+                                  aria-label="London"
+                                  class="form-control"
+                                  name="cityAddress"
+                                  placeholder="London"
+                                  required=""
+                                  type="text"
+                                />
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="mb-4">
+                                <label class="labels">
+                                  Country <span class="text-danger"> * </span>
+                                </label>
+                                <select
+                                  class="form-control"
+                                  data-trigger=""
+                                  id="choices-single-default"
+                                  name="choices-single-default"
+                                >
+                                  <option selected=""> Select country </option>
+                                  <option value="CZ"> Czech Republic </option>
+                                  <option value="DK"> Denmark </option>
+                                  <option value="DO"> Dominican Republic </option>
+                                  <option value="IQ"> Iraq </option>
+                                  <option value="IL"> Israel </option>
+                                  <option value="IT"> Italy </option>
+                                  <option value="JM"> Jamaica </option>
+                                  <option value="JP"> Japan </option>
+                                  <option value="MG"> Madagascar </option>
+                                  <option value="MT"> Malta </option>
+                                  <option value="NO"> Norway </option>
+                                  <option value="PL"> Poland </option>
+                                  <option value="PT"> Portugal </option>
+                                  <option value="RO"> Romania </option>
+                                  <option value="RU"> Russian Federation </option>
+                                  <option value="LC"> Saint Lucia </option>
+                                  <option value="WS"> Samoa </option>
+                                  <option value="SM"> San Marino </option>
+                                  <option value="SA"> Saudi Arabia </option>
+                                  <option value="ES"> Spain </option>
+                                  <option value="SZ"> Swaziland </option>
+                                  <option value="SE"> Sweden </option>
+                                  <option value="TR"> Turkey </option>
+                                  <option value="UG"> Uganda </option>
+                                  <option value="UA"> Ukraine </option>
+                                  <option value="AE"> United Arab Emirates </option>
+                                  <option value="GB"> United Kingdom </option>
+                                  <option value="US"> United States </option>
+                                  <option value="VN"> Viet Nam </option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <h4 class="title">Payment method</h4>
+                          <tabset class="tab-space checkout-btn-group">
+                            <tab>
+                              <ng-template tabHeading> Credit card </ng-template>
+                              <div class="row">
+                                <div class="col-md-12">
+                                  <div class="js-form-message">
+                                    <label class="form-label"> Card number </label>
+                                    <input
+                                      aria-label="**** **** **** ***"
+                                      class="form-control"
+                                      name="cardNumber"
+                                      placeholder="**** **** **** ***"
+                                      required=""
+                                      type="text"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <br />
+          
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <div class="js-form-message mb-4">
+                                    <label class="form-label"> Card holder </label>
+                                    <input
+                                      aria-label="Jack Wayley"
+                                      class="form-control"
+                                      name="cardHolder"
+                                      placeholder="Jack Wayley"
+                                      required=""
+                                      type="text"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="js-form-message mb-4">
+                                    <label class="form-label"> Expiration </label>
+                                    <input
+                                      aria-label="MM/YY"
+                                      class="form-control"
+                                      name="cardExpirationDate"
+                                      placeholder="MM/YY"
+                                      required=""
+                                      type="text"
+                                    />
+                                  </div>
+                                </div>
+                                <div class="col-md-2">
+                                  <div class="js-form-message mb-4">
+                                    <label class="form-label"> CVC </label>
+                                    <input
+                                      aria-label="***"
+                                      class="form-control"
+                                      name="cardCVC"
+                                      placeholder="***"
+                                      required=""
+                                      type="text"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="d-flex justify-content-between align-items-center"
+                              >
+                                <a href="javascript:void(0)">
+                                  <span class="fas fa-angle-left mr-2"> </span> Return to
+                                  cart
+                                </a>
+                                <button class="btn btn-info btn-sm" type="submit">
+                                  Order now
+                                </button>
+                              </div>
+                            </tab>
+                            <tab>
+                              <ng-template tabHeading> Online Transfer </ng-template>
+                              <h5>Send payment to:</h5>
+                              <select
+                                  class="form-control"
+                                  data-trigger=""
+                                  id="choices-single-default"
+                                  name="choices-single-default"
+                                >
+                                  <option selected=""> Select bank </option>
+                                  <option value="1"> Ambank </option>
+                                  <option value="2"> BSN </option>
+                                  <option value="3"> Maybank </option>
+                                  <option value="4"> Bank Islam </option>
+                                  <option value="5"> Bank Rakyat </option>
+                                  <option value="6"> CIMB Bank </option>
+                                  <option value="7"> Hong Leong Bank </option>
+                                  <option value="8"> Affin Bank </option>
+                                  <option value="9"> Bank </option>
+                                  <option value="10"> Bank </option>
+                                </select>
+          
+                              <br />
+          
+                              <button class="btn btn-info btn-sm" type="submit">
+                                Proceed to Gateway
+                              </button>
+                            </tab>
+                          </tabset>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</div>

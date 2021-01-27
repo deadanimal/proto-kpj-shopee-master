@@ -1,0 +1,112 @@
+<nav
+  class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white"
+  id="sidenav-main"
+  (mouseover)="onMouseEnterSidenav()"
+  (mouseout)="onMouseLeaveSidenav()"
+>
+  <perfect-scrollbar>
+    <div class="scrollbar-inner">
+      <div class="sidenav-header d-flex align-items-center bg-default">
+        <a
+          class="navbar-brand text-white font-weight-bold"
+          [routerLink]="['/#']"
+        >
+          TDCA
+        </a>
+        <div class="ml-auto">
+          <!-- Sidenav toggler -->
+          <!-- <div
+            class="sidenav-toggler d-none d-xl-block"
+            data-action="sidenav-unpin"
+            data-target="#sidenav-main"
+            (click)="minimizeSidebar()"
+          >
+            <div class="sidenav-toggler-inner">
+              <i class="fas fa-bars text-white"></i>
+            </div>
+          </div> -->
+        </div>
+      </div>
+      <div class="navbar-inner">
+        <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+          <!-- Collapse header -->
+          <div>
+            <div class="float-left">
+              <div
+                id="avatar-size-component"
+                class="tab-pane tab-example-result fade show active"
+                role="tabpanel"
+                aria-labelledby="avatar-size-component-tab"
+              >
+                <a href="#!" class="avatar rounded-circle d-flex">
+                  <img
+                    alt="Image placeholder"
+                    src="../../../assets/img/theme/team-1.jpg"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="float-left pl-4">
+              <h4 class="mb-0">Ahmad Albab</h4>
+              <small
+                ><i class="fas fa-globe-asia text-success"></i>&nbsp;
+                Aktif</small
+              >
+            </div>
+          </div>
+          <div class="row pt-2">
+            <div class="col p-0">
+              <div
+                class="input-group input-group-alternative input-group-merge"
+              >
+                <div class="input-group-prepend">
+                  <span class="input-group-text"
+                    ><i class="fas fa-search"></i
+                  ></span>
+                </div>
+                <input
+                  class="form-control"
+                  placeholder="Carian"
+                  type="text"
+                  (focus)="focus = true"
+                  (blur)="focus = false"
+                />
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav"></ul>
+          <!-- Divider -->
+          <!-- <hr class="my-3" /> -->
+          <!-- <h5 class="mb-0 text-center p-3">Checklist Todo Hari Ini</h5>
+          <ul class="list-group list-group-flush" data-toggle="checklist">
+            <li *ngFor="let todo of todos, let i = index"
+              class="checklist-entry list-group-item flex-column align-items-start"
+            >
+              <div class="checklist-item" [ngClass]="'checklist-item-' + todo.color">
+                <div class="checklist-info">
+                  <h5 class="checklist-title mb-0">{{ todo.note }}</h5>
+                  <small> {{ todo.time }} </small>
+                </div>
+                <div>
+                  <div
+                    class="custom-control custom-checkbox" [ngClass]="'custom-checkbox-' + todo.color"
+                  >
+                    <input
+                      [checked]="todo.checked"
+                      class="custom-control-input"
+                      [id]="'chk-todo-task-' + i"
+                      type="checkbox"
+                    /><label
+                      class="custom-control-label"
+                      [for]="'chk-todo-task-' + i"
+                    ></label>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </perfect-scrollbar>
+</nav>
