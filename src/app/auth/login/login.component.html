@@ -1,5 +1,5 @@
 <ngx-loading-bar></ngx-loading-bar>
-<div class="main-content auth-content d-flex align-items-center">
+<div class="main-content auth-content d-flex align-items-center mt-4">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
@@ -56,6 +56,20 @@
                                     </ng-container>
                                 </div>
                             </div>
+
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-primary">
+                                    <h5>OTP Request</h5>
+                                </span>
+                            </div>
+                            <input 
+                                class="form-control"
+                                placeholder="xxxxxx"
+                                type="password"
+                                formControlName="password"
+                                (focus)="focusPassword = true" 
+                                (blur)="focusPassword = false"
+                            />
 
                             <div class="row">
 								<div class="col-6">

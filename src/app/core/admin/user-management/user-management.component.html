@@ -1,0 +1,665 @@
+<div class="dashboard-content">
+    <div class="header pb-6">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="row align-items-center py-4">
+                    <div class="col-lg-6 col-7">
+                        <h6 class="h2 text-dark d-inline-block mb-0">User Management</h6>
+    
+                        <nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+                            <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                                <li class=" breadcrumb-item">
+                                    <a href="javascript:void(0)"> <i class="fas fa-user-edit text-dark"> </i> </a>
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
+    
+                    <!-- <div class="col-lg-6 col-5 text-right">
+                        <a class="btn btn-sm btn-neutral" href="javascript:void(0)"> New </a>
+    
+                        <a class="btn btn-sm btn-neutral" href="javascript:void(0)">
+                            Filters
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid mt--6">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <h3 class="m-2">List of Users</h3>
+                            </div>
+                            <div class="col-xl-6 text-right">
+                                <button class=" btn btn-default" type="button" (click)="openModal(createNewUser)"> New User </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dataTables_wrapper py-4">		  
+                        <ngx-datatable
+                          class="bootstrap selection-cell"
+                          [columnMode]="'force'"
+                          [headerHeight]="50"
+                          [footerHeight]="50"
+                          [rowHeight]="'auto'"
+                          [limit]="entries != -1 ? entries : undefined"
+                          [rows]="temp"
+                          
+                        >
+                            <ngx-datatable-column name="User ID">
+                                <ng-template
+                                let-rowIndex="rowIndex"
+                                let-row="row"
+                                ngx-datatable-cell-template
+                                >
+                                <strong>{{ rowIndex + 1111 }}</strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Username" >
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                {{row.username}}
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="First Name" >
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                {{row.firstname}}
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Last Name" >
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                {{row.lastname}}
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Email"></ngx-datatable-column>
+                            <ngx-datatable-column name="Roles"></ngx-datatable-column>
+                      
+                            <ngx-datatable-column name="Action">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <button class=" btn btn-icon btn-default btn-sm" type="button" title="Edit" (click)="openModal(editDataUser)">
+                                        <span class=" btn-inner--icon"> <i class=" far fa-edit"> </i> </span>
+                                    </button>
+                                    <!-- <button class=" btn btn-icon btn-danger btn-sm" type="button" title="Delete">
+                                        <span class=" btn-inner--icon"> <i class=" fas fa-trash"> </i> </span>
+                                    </button>
+                                    <button class=" btn btn-icon btn-default btn-sm" type="button" title="Print">
+                                        <span class=" btn-inner--icon"> <i class=" fas fa-print"> </i> </span>
+                                    </button> -->
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                      </div>
+                </div>
+            </div>
+
+            <div class="col-xl-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-xl-6">
+                                <h3 class="m-2">List of  User Roles</h3>
+                            </div>
+                            <!-- <div class="col-xl-6 text-right">
+                                <button class=" btn btn-default" type="button"> New User </button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="dataTables_wrapper py-4">		  
+                        <ngx-datatable
+                          class="bootstrap selection-cell"
+                          [columnMode]="'force'"
+                          [headerHeight]="50"
+                          [footerHeight]="50"
+                          [rowHeight]="'auto'"
+                          [limit]="entries != -1 ? entries : undefined"
+                          [rows]="temp"
+                          
+                        >
+                            <ngx-datatable-column name="User ID">
+                                <ng-template
+                                let-rowIndex="rowIndex"
+                                let-row="row"
+                                ngx-datatable-cell-template
+                                >
+                                <strong>{{ rowIndex + 1111 }}</strong>
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Username" >
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                {{row.username}}
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="First Name" >
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                {{row.firstname + " " + row.lastname}}
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Roles" >
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                {{row.roles}}
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column>
+                                <ng-template ngx-datatable-header-template>
+                                  <span>Permission</span>
+                                </ng-template>
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                  <span
+                                    *ngIf="row.roles == 'Admin'"
+                                    class="badge badge-pill badge-success"
+                                    > Create </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Admin'"
+                                    class="badge badge-pill badge-success"
+                                    > Read </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Admin'"
+                                    class="badge badge-pill badge-success"
+                                    > Update </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Admin'"
+                                    class="badge badge-pill badge-success"
+                                    > Delete </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Developer'"
+                                    class="badge badge-pill badge-warning"
+                                    > Create </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Developer'"
+                                    class="badge badge-pill badge-success"
+                                    > Read </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Developer'"
+                                    class="badge badge-pill badge-success"
+                                    > Update </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Developer'"
+                                    class="badge badge-pill badge-warning"
+                                    > Delete </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Finance'"
+                                    class="badge badge-pill badge-warning"
+                                    > Create </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Finance'"
+                                    class="badge badge-pill badge-success"
+                                    > Read </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Finance'"
+                                    class="badge badge-pill badge-warning"
+                                    > Update </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Finance'"
+                                    class="badge badge-pill badge-warning"
+                                    > Delete </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'HR'"
+                                    class="badge badge-pill badge-success"
+                                    > Create </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'HR'"
+                                    class="badge badge-pill badge-success"
+                                    > Update </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'HR'"
+                                    class="badge badge-pill badge-success"
+                                    > Edit </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'HR'"
+                                    class="badge badge-pill badge-success"
+                                    > Delete </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Runner'"
+                                    class="badge badge-pill badge-warning"
+                                    > Create </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Runner'"
+                                    class="badge badge-pill badge-success"
+                                    > Read </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Runner'"
+                                    class="badge badge-pill badge-warning"
+                                    > Update </span
+                                  >
+                                  <span
+                                    *ngIf="row.roles == 'Runner'"
+                                    class="badge badge-pill badge-warning"
+                                    > Delete </span
+                                  >                   
+                                </ng-template>
+                            </ngx-datatable-column>
+                            <ngx-datatable-column name="Action">
+                                <ng-template let-row="row" ngx-datatable-cell-template>
+                                    <button class=" btn btn-icon btn-default btn-sm" type="button" title="Edit" (click)="openModal(editDataRoles)">
+                                        <span class=" btn-inner--icon"> <i class=" far fa-edit"> </i> </span>
+                                    </button>
+                                    <!-- <button class=" btn btn-icon btn-danger btn-sm" type="button" title="Delete">
+                                        <span class=" btn-inner--icon"> <i class=" fas fa-trash"> </i> </span>
+                                    </button>
+                                    <button class=" btn btn-icon btn-default btn-sm" type="button" title="Print">
+                                        <span class=" btn-inner--icon"> <i class=" fas fa-print"> </i> </span>
+                                    </button> -->
+                                </ng-template>
+                            </ngx-datatable-column>
+                        </ngx-datatable>
+                      </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #createNewUser>
+    <div class=" modal-header">
+        <h6 class=" modal-title" id="modal-title-default">
+          Create New User
+        </h6>
+
+        <button
+          aria-label="Close"
+          class=" close"
+          data-dismiss="modal"
+          type="button"
+          (click)="closeModal()"
+        >
+          <span aria-hidden="true"> × </span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                Username
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ahmad Ali"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-email-input">
+                Email
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-email-input"
+                    type="email"
+                    placeholder="example123@example.com"
+                  />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                First name
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ahmad"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                Last Name
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ali"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-password-input">
+                Password
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-password-input"
+                    type="password"
+                    value="password"
+                  />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-password-input">
+                 Confirm Password
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-password-input"
+                    type="password"
+                    value="password"
+                  />
+            </div>
+        </div>
+      </div>
+
+      <div class=" modal-footer">
+        <button class=" btn btn-default" (click)="successSwal()">
+          Save
+        </button>
+
+        <button
+          class=" btn btn-outline-danger ml-auto"
+          data-dismiss="modal"
+          type="button"
+          (click)="closeModal()"
+        >
+          Close
+        </button>
+      </div>
+</ng-template>
+
+<ng-template #editDataUser>
+    <div class=" modal-header">
+        <h6 class=" modal-title" id="modal-title-default">
+          Edit User
+        </h6>
+
+        <button
+          aria-label="Close"
+          class=" close"
+          data-dismiss="modal"
+          type="button"
+          (click)="closeModal()"
+        >
+          <span aria-hidden="true"> × </span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                Username
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ahmad Ali"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-email-input">
+                Email
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-email-input"
+                    type="email"
+                    placeholder="example123@example.com"
+                  />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                First name
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ahmad"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                Last Name
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ali"
+                />
+            </div>
+        </div>
+      </div>
+
+      <div class=" modal-footer">
+        <button class=" btn btn-default" (click)="successSwal()">
+          Save
+        </button>
+
+        <button
+          class=" btn btn-outline-danger ml-auto"
+          data-dismiss="modal"
+          type="button"
+          (click)="closeModal()"
+        >
+          Close
+        </button>
+      </div>
+</ng-template>
+
+<ng-template #editDataRoles>
+    <div class=" modal-header">
+        <h6 class=" modal-title" id="modal-title-default">
+            Edit Roles and Permission
+        </h6>
+
+        <button
+          aria-label="Close"
+          class=" close"
+          data-dismiss="modal"
+          type="button"
+          (click)="closeModal()"
+        >
+          <span aria-hidden="true"> × </span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                Username
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ahmad Ali"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                First name
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ahmad"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="example-text-input">
+                Last Name
+              </label>
+  
+              <input
+                    class=" form-control"
+                    id="example-text-input"
+                    type="text"
+                    placeholder="Ali"
+                />
+            </div>
+        </div>
+        <div class=" col-12">
+            <div class=" form-group">
+              <label class=" form-control-label" for="exampleFormControlSelect3">
+                Roles
+              </label>
+  
+              <select class=" form-control" id="exampleFormControlSelect3">
+                <option selected=""> Choose Roles </option>
+                <option> Accountant </option>
+
+                <option> Developer </option>
+
+                <option> Finance </option>
+
+                <option> HR </option>
+
+                <option> Runner </option>
+              </select>
+            </div>
+        </div>
+        <div class="col-12">
+            <label class=" form-control-label" for="exampleFormControlSelect3">
+                Permission
+            </label>
+            <div class="row">
+                <div class="col-6">
+                    <label>
+                        Create
+                    </label>
+                </div>
+                <div class="col-6 text-right">
+                    <label class=" custom-toggle custom-toggle-success mr-1">
+                        <input checked="checked" type="checkbox" />
+        
+                        <span
+                          class=" custom-toggle-slider rounded-circle"
+                          data-label-off="No"
+                          data-label-on="Yes"
+                        >
+                        </span>
+                      </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label>
+                        Read
+                    </label>
+                </div>
+                <div class="col-6 text-right">
+                    <label class=" custom-toggle custom-toggle-success mr-1">
+                        <input checked="checked" type="checkbox" />
+        
+                        <span
+                          class=" custom-toggle-slider rounded-circle"
+                          data-label-off="No"
+                          data-label-on="Yes"
+                        >
+                        </span>
+                      </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label>
+                        Update
+                    </label>
+                </div>
+                <div class="col-6 text-right">
+                    <label class=" custom-toggle custom-toggle-success mr-1">
+                        <input checked="checked" type="checkbox" />
+        
+                        <span
+                          class=" custom-toggle-slider rounded-circle"
+                          data-label-off="No"
+                          data-label-on="Yes"
+                        >
+                        </span>
+                      </label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <label>
+                        Delete
+                    </label>
+                </div>
+                <div class="col-6 text-right">
+                    <label class=" custom-toggle custom-toggle-success mr-1">
+                        <input checked="checked" type="checkbox" />
+        
+                        <span
+                          class=" custom-toggle-slider rounded-circle"
+                          data-label-off="No"
+                          data-label-on="Yes"
+                        >
+                        </span>
+                      </label>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class=" modal-footer">
+        <button class=" btn btn-default" (click)="successSwal()">
+          Save
+        </button>
+
+        <button
+          class=" btn btn-outline-danger ml-auto"
+          data-dismiss="modal"
+          type="button"
+          (click)="closeModal()"
+        >
+          Close
+        </button>
+      </div>
+</ng-template>
+

@@ -5,9 +5,10 @@ import { MocksService } from 'src/app/shared/services/mocks/mocks.service';
 import * as moment from 'moment';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
+import am4themes_kelly from "@amcharts/amcharts4/themes/kelly";
+import am4themes_material from "@amcharts/amcharts4/themes/material";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import { BsModalRef, BsModalService } from 'ngx-bootstrap';
-am4core.useTheme(am4themes_animated);
 
 @Component({
   selector: 'app-report',
@@ -100,15 +101,20 @@ export class ReportComponent implements OnInit, OnDestroy {
 
   getCharts() {
     this.zone.runOutsideAngular(() => {
-      this.getChart()
-      this.getChart1()
-      this.getChart2()
-      this.getChart3()
+      this.getChartReport1()
+      this.getChartReport2()
+      this.getChartReport3()
+      this.getChartReport4()
+      this.getChartReport5()
+      this.getChartReport6()
     })
   }
 
-  getChart() {
-    let chart = am4core.create("chartdiv", am4charts.XYChart);
+  getChartReport1() {
+    am4core.useTheme(am4themes_kelly);
+    am4core.useTheme(am4themes_animated);
+
+    let chart = am4core.create("chartreport1", am4charts.XYChart);
     chart.paddingRight = 20;
 
     let data = this.dataChart
@@ -141,8 +147,11 @@ export class ReportComponent implements OnInit, OnDestroy {
     this.chart = chart
   }
 
-  getChart1() {
-    let chart = am4core.create("chartdiv1", am4charts.XYChart);
+  getChartReport2() {
+    am4core.useTheme(am4themes_kelly);
+    am4core.useTheme(am4themes_animated);
+
+    let chart = am4core.create("chartreport2", am4charts.XYChart);
     chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
     let data = [];
@@ -187,8 +196,11 @@ export class ReportComponent implements OnInit, OnDestroy {
     this.chart1 = chart
   }
 
-  getChart2() {
-    let chart = am4core.create("chartdiv2", am4charts.XYChart);
+  getChartReport3() {
+    am4core.useTheme(am4themes_kelly);
+    am4core.useTheme(am4themes_animated);
+
+    let chart = am4core.create("chartreport3", am4charts.XYChart);
 
     // Add data
     chart.data = this.dataChart2
@@ -270,8 +282,11 @@ export class ReportComponent implements OnInit, OnDestroy {
     this.chart2 = chart
   }
 
-  getChart3() {
-    let chart = am4core.create("chartdiv3", am4charts.XYChart);
+  getChartReport4() {
+    am4core.useTheme(am4themes_kelly);
+    am4core.useTheme(am4themes_animated);
+
+    let chart = am4core.create("chartreport4", am4charts.XYChart);
 
     // Add data
     chart.data = this.dataChart3
@@ -331,6 +346,167 @@ export class ReportComponent implements OnInit, OnDestroy {
 
     this.chart3 = chart
 
+  }
+
+  getChartReport5 () {
+    am4core.useTheme(am4themes_kelly);
+    am4core.useTheme(am4themes_animated);
+
+    let chart = am4core.create("chartreport5", am4charts.XYChart);
+
+    chart.data = [{
+    "country": "Brand A",
+    "visits": 2025
+    }, {
+    "country": "Brand B",
+    "visits": 1882
+    }, {
+    "country": "Brand C",
+    "visits": 1809
+    }, {
+    "country": "Brand D",
+    "visits": 1322
+    }, {
+    "country": "Brand E",
+    "visits": 1122
+    }, {
+    "country": "Brand F",
+    "visits": 1114
+    }, ];
+
+    chart.padding(40, 40, 40, 40);
+
+    let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.renderer.grid.template.location = 0;
+    categoryAxis.dataFields.category = "country";
+    categoryAxis.renderer.minGridDistance = 60;
+    categoryAxis.renderer.inversed = true;
+    categoryAxis.renderer.grid.template.disabled = true;
+
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+    valueAxis.min = 0;
+    valueAxis.extraMax = 0.1;
+    //valueAxis.rangeChangeEasing = am4core.ease.linear;
+    //valueAxis.rangeChangeDuration = 1500;
+
+    let series = chart.series.push(new am4charts.ColumnSeries());
+    series.dataFields.categoryX = "country";
+    series.dataFields.valueY = "visits";
+    series.tooltipText = "{valueY.value}"
+    series.columns.template.strokeOpacity = 0;
+    series.columns.template.column.cornerRadiusTopRight = 10;
+    series.columns.template.column.cornerRadiusTopLeft = 10;
+    //series.interpolationDuration = 1500;
+    //series.interpolationEasing = am4core.ease.linear;
+    let labelBullet = series.bullets.push(new am4charts.LabelBullet());
+    labelBullet.label.verticalCenter = "bottom";
+    labelBullet.label.dy = -10;
+    labelBullet.label.text = "{values.valueY.workingValue.formatNumber('#.')}";
+
+    chart.zoomOutButton.disabled = true;
+
+    // as by default columns of the same series are of the same color, we add adapter which takes colors from chart.colors color set
+    series.columns.template.adapter.add("fill", function (fill, target) {
+    return chart.colors.getIndex(target.dataItem.index);
+    });
+
+    setInterval(function () {
+    am4core.array.each(chart.data, function (item) {
+      item.visits += Math.round(Math.random() * 200 - 100);
+      item.visits = Math.abs(item.visits);
+    })
+    chart.invalidateRawData();
+    }, 2000)
+
+    categoryAxis.sortBySeries = series;
+  }
+
+  getChartReport6 () {
+    
+    /* Chart code */
+    // Themes begin
+    am4core.useTheme(am4themes_material);
+    am4core.useTheme(am4themes_animated);
+    // Themes end
+
+    // Create chart instance
+    let chart = am4core.create("chartreport6", am4charts.XYChart);
+
+    // Export
+    chart.exporting.menu = new am4core.ExportMenu();
+
+    // Data for both series
+    let data = [ {
+      "year": "2015",
+      "income": 23.5,
+      "expenses": 21.1
+    }, {
+      "year": "2016",
+      "income": 26.2,
+      "expenses": 30.5
+    }, {
+      "year": "2017",
+      "income": 30.1,
+      "expenses": 34.9
+    }, {
+      "year": "2018",
+      "income": 29.5,
+      "expenses": 31.1
+    }, {
+      "year": "2019",
+      "income": 30.6,
+      "expenses": 28.2,
+      "lineDash": "5,5",
+    }, {
+      "year": "2020",
+      "income": 34.1,
+      "expenses": 32.9,
+      "strokeWidth": 1,
+      "columnDash": "5,5",
+      "fillOpacity": 0.2,
+      "additional": "(projection)"
+    } ];
+
+    /* Create axes */
+    let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+    categoryAxis.dataFields.category = "year";
+    categoryAxis.renderer.minGridDistance = 30;
+
+    /* Create value axis */
+    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+    /* Create series */
+    let columnSeries = chart.series.push(new am4charts.ColumnSeries());
+    columnSeries.name = "Income";
+    columnSeries.dataFields.valueY = "income";
+    columnSeries.dataFields.categoryX = "year";
+
+    columnSeries.columns.template.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
+    columnSeries.columns.template.propertyFields.fillOpacity = "fillOpacity";
+    columnSeries.columns.template.propertyFields.stroke = "stroke";
+    columnSeries.columns.template.propertyFields.strokeWidth = "strokeWidth";
+    columnSeries.columns.template.propertyFields.strokeDasharray = "columnDash";
+    columnSeries.tooltip.label.textAlign = "middle";
+
+    let lineSeries = chart.series.push(new am4charts.LineSeries());
+    lineSeries.name = "Expenses";
+    lineSeries.dataFields.valueY = "expenses";
+    lineSeries.dataFields.categoryX = "year";
+
+    lineSeries.stroke = am4core.color("#fdd400");
+    lineSeries.strokeWidth = 3;
+    lineSeries.propertyFields.strokeDasharray = "lineDash";
+    lineSeries.tooltip.label.textAlign = "middle";
+
+    let bullet = lineSeries.bullets.push(new am4charts.Bullet());
+    bullet.fill = am4core.color("#fdd400"); // tooltips grab fill from parent by default
+    bullet.tooltipText = "[#fff font-size: 15px]{name} in {categoryX}:\n[/][#fff font-size: 20px]{valueY}[/] [#fff]{additional}[/]"
+    let circle = bullet.createChild(am4core.Circle);
+    circle.radius = 4;
+    circle.fill = am4core.color("#fff");
+    circle.strokeWidth = 3;
+
+    chart.data = data;
   }
 
 }

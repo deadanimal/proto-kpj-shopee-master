@@ -32,6 +32,45 @@ export const ROUTES: RouteInfo[] = [
     icontype: 'fas fa-home text-purple'
   },
   {
+    path: '/admin/user-management',
+    title: 'User Management',
+    type: 'link',
+    icontype: 'fas fa-user-edit text-green'
+  },
+  {
+    path: '/admin/product',
+    title: 'Product',
+    type: 'sub',
+    icontype: 'fas fa-file-medical text-pink',
+    collapse: 'product',
+    isCollapsed: true,
+    children: [
+      { path: 'product-management', title: 'Product Management', type: 'link' },
+      { path: 'add-new-product', title: 'Add New Product', type: 'link' },
+      { path: 'product-list', title: 'Product List', type: 'link' },
+      { path: 'add-new-prescription', title: 'Add New Prescription', type: 'link' },
+      { path: 'request-prescription', title: 'Request Prescription', type: 'link' },
+    ]
+  },
+  {
+    path: '/admin/administration-user',
+    title: 'Administration User',
+    type: 'link',
+    icontype: 'fas fa-laptop-medical text-blue'
+  },
+  {
+    path: '/admin/customer-account',
+    title: 'Customer Account',
+    type: 'link',
+    icontype: 'fas fa-address-book text-indigo'
+  },
+  {
+    path: '/admin/report',
+    title: 'Report',
+    type: 'link',
+    icontype: 'fas fa-chart-bar text-red'
+  },
+  {
     path: '/admin/management',
     title: 'Management',
     type: 'sub',
@@ -42,12 +81,6 @@ export const ROUTES: RouteInfo[] = [
       { path: 'audit-trails', title: 'Audit Trails', type: 'link' },
       { path: 'user', title: 'User', type: 'link' }
     ]
-  },
-  {
-    path: '/admin/report',
-    title: 'Reporting',
-    type: 'link',
-    icontype: 'fas fa-chart-bar text-red'
   },
   /*
   {

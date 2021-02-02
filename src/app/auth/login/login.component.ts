@@ -85,7 +85,7 @@ export class LoginComponent implements OnInit {
 
   successMessage() {
     let title = 'Success'
-    let message = 'Loging in right now'
+    let message = 'Logging in right now'
     this.notifyService.openToastr(title, message)
   }
 
