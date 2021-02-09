@@ -158,9 +158,21 @@
 						<h5 class="m-0">Outstanding Revenue</h5>
 					</div>
 					<div class="card-body">
-						<div class="mb-2">
+						<!-- <div class="mb-2">
 							<progressbar max="100" [value]="60" type="yellow" [striped]="true" [animate]="true" style="height: 35px;"><h4>RM 567</h4></progressbar>
-						  </div>
+						</div> -->
+						<div class="row">
+							<div class="col-xl-10">
+								<div class="mt-2 ">
+									<progressbar class="bg-warning" max="100" [value]="60" type="yellow" [striped]="true" [animate]="true" style="height: 35px;"><h4>RM 567</h4></progressbar>
+								</div>
+							</div>
+							<div class="col-xl-2">
+								<h2 class="h1 mb-0 text-success mt-0"> RM16,123 </h2>
+	
+								<span class=" text-nowrap"> Total Outstanding </span>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -197,8 +209,6 @@
 					</div>
 				</div>
 			</div>
-	
-			
 		</div>
 	</div>
 </div>

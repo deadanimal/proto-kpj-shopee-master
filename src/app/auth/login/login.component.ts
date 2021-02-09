@@ -83,9 +83,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  goPageMain() {
+    this.router.navigate(['/pages/home'])
+  }
+
   successMessage() {
     let title = 'Success'
-    let message = 'Logging in right now'
+    let message = 'Login in right now'
     this.notifyService.openToastr(title, message)
   }
 

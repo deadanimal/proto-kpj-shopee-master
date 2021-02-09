@@ -194,6 +194,7 @@ export class UserManagementComponent implements OnInit {
       buttonsStyling: false,
       confirmButtonClass: "btn btn-success"
     });
+    this.modal.hide()
   }
 
 }

@@ -1,27 +1,292 @@
-<div class="header pb-6">
-	<div class="container-fluid">
-		<div class="header-body">
-			<div class="row align-items-center py-4">
-				<div class="col-lg-6 col-7">
-					<h6 class="h2 text-dark d-inline-block mb-0">Administration User</h6>
-
-					<nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
-						<ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-							<li class=" breadcrumb-item">
-								<a href="javascript:void(0)"> <i class="fas fa-laptop-medical text-dark"> </i> </a>
-							</li>
-						</ol>
-					</nav>
+<div class="dashboard-content">
+	<div class="header pb-6">
+		<div class="container-fluid">
+			<div class="header-body">
+				<div class="row align-items-center py-4">
+					<div class="col-lg-6 col-7">
+						<h6 class="h2 text-dark d-inline-block mb-0">Administration User</h6>
+	
+						<nav aria-label="breadcrumb" class=" d-none d-md-inline-block ml-md-4">
+							<ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+								<li class=" breadcrumb-item">
+									<a href="javascript:void(0)"> <i class="fas fa-laptop-medical text-dark"> </i> </a>
+								</li>
+							</ol>
+						</nav>
+					</div>
+	
+					<!-- <div class="col-lg-6 col-5 text-right">
+						<a class="btn btn-sm btn-neutral" href="javascript:void(0)"> New </a>
+	
+						<a class="btn btn-sm btn-neutral" href="javascript:void(0)">
+							Filters
+						</a>
+					</div> -->
 				</div>
+			</div>
+		</div>
+	</div>
 
-				<!-- <div class="col-lg-6 col-5 text-right">
-					<a class="btn btn-sm btn-neutral" href="javascript:void(0)"> New </a>
+	<div class="container-fluid mt--6">
+		<div class="card">
+			<div class="card-header">
+				<h3 class="m-2"> User Search </h3>
+			</div>
+			<div class="card-body">
+				<div class="row">
+					<div class=" col-xl-6">
+						<div class=" form-group">
+							<label class=" form-control-label" for="example4cols2Input">
+								Username
+							</label>
+				
+							<input
+							  class=" form-control"
+							  id="example4cols2Input"
+							  placeholder="Type here..."
+							  type="text"
+							/>
+						</div>
+					</div>
+					<div class=" col-xl-6">
+						<div class=" form-group">
+							<label class=" form-control-label" for="example4cols2Input">
+								Email
+							</label>
+				
+							<input
+								class=" form-control"
+								id="example-email-input"
+								type="email"
+								placeholder="argon@example.com"
+							/>
+						</div>
+					</div>
+					<div class=" col-xl-6">
+						<div class=" form-group">
+							<label class=" form-control-label" for="example4cols2Input">
+								User Status
+							</label>
 
-					<a class="btn btn-sm btn-neutral" href="javascript:void(0)">
-						Filters
-					</a>
-				</div> -->
+							<select class="form-control custom-select">
+								<option hidden selected>Please pick</option>
+								<option> Active </option>
+								<option> Not Active </option>
+							</select>
+						</div>
+					</div>
+					<div class=" col-xl-6">
+						<div class=" form-group">
+							<label class=" form-control-label" for="example4cols2Input">
+							  User Type
+							</label>
+				
+							<select class="form-control custom-select">
+								<option hidden selected>Please pick</option>
+								<option> User </option>
+								<option> Admin </option>
+							</select>
+						</div>
+					</div>
+			  
+					<div class="col-xl-12 text-right">
+						<button class="btn btn-default" type="button"> Search </button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="card">
+			<div class="card-header">
+				<h3 class="m-2"> User List </h3>
+			</div>
+			<div class="card-body">
+				<div class="dataTables_wrapper py-4">
+					<div class="row">
+					  <div class="col-sm-12 col-md-6">
+						<div class="dataTables_length" id="datatable_length">
+						  <label>
+							Show
+							<select
+							  name="datatable_length"
+							  aria-controls="datatable"
+							  class="form-control form-control-sm"
+							  (change)="entriesChange($event)"
+							>
+							  <option value="5" [selected]="entries==5">5</option>
+							  <option value="10" [selected]="entries==10">10</option>
+							  <option value="15" [selected]="entries==15">15</option>
+							  <option value="-1" [selected]="entries==-1">All</option>
+							</select>
+							entries
+							</label>
+						</div>
+					  </div>
+					  <!-- <div class="col-sm-12 col-md-6">
+						<div id="datatable_filter" class="dataTables_filter">
+						  <label>
+							<input
+							  type="search"
+							  class="form-control form-control-sm"
+							  placeholder="Search records"
+							  aria-controls="datatable"
+							  (keyup)="filterTable($event)"
+							/>
+						  </label>
+						</div>
+					  </div> -->
+					</div>
+				
+					<ngx-datatable
+					  class="bootstrap selection-cell"
+					  [columnMode]="'force'"
+					  [headerHeight]="50"
+					  [footerHeight]="50"
+					  [rowHeight]="'auto'"
+					  [limit]="entries != -1 ? entries:undefined"
+					  [rows]="temp"
+					  
+					>
+				
+						<ngx-datatable-column name="ID" >
+							<ng-template let-row="row" ngx-datatable-cell-template>
+							{{row.clientId}}
+							</ng-template>
+						</ngx-datatable-column>
+						<ngx-datatable-column name="Username" >
+							<ng-template let-row="row" ngx-datatable-cell-template>
+							{{row.name}}
+							</ng-template>
+						</ngx-datatable-column>
+						<ngx-datatable-column name="Email" >
+							<ng-template let-row="row" ngx-datatable-cell-template>
+							{{row.email}}
+							</ng-template>
+						</ngx-datatable-column>
+						<ngx-datatable-column name="Status" >
+							<ng-template let-row="row" ngx-datatable-cell-template>
+								<span
+								  *ngIf="row.status == 'success'"
+								  class="badge badge-pill badge-success"
+								  >Active</span
+								>
+								<!-- <span
+								  *ngIf="row.status == 'tobepublish'"
+								  class="badge badge-pill badge-warning"
+								  >To be published</span
+								> -->
+								<span
+								  *ngIf="row.status == 'cancel'"
+								  class="badge badge-pill badge-danger"
+								  >Not Active</span
+								>                 
+							  </ng-template>
+						</ngx-datatable-column>
+						<ngx-datatable-column name="User Type" >
+							<ng-template let-row="row" ngx-datatable-cell-template>
+							{{row.type}}
+							</ng-template>
+						</ngx-datatable-column>
+						<ngx-datatable-column name="Action">
+							<ng-template let-row="row" ngx-datatable-cell-template>
+								<!-- <button class=" btn btn-icon btn-danger btn-sm" type="button" title="Action" (click)="openModal(viewAction)">
+									<span class=" btn-inner--icon"> <i class=" fas fa-file-pdf"> </i> </span>
+								</button>
+								<button class=" btn btn-icon btn-default btn-sm" type="button" title="Generate Invoice" (click)="lgModal(generateInvoice)">
+									<span class=" btn-inner--icon"> <i class=" far fa-eye"> </i> </span>
+								</button> -->
+								<button class=" btn btn-icon btn-default btn-sm" type="button" title="Edit" (click)="openModal(edit)">
+									<span class=" btn-inner--icon"> <i class=" fas fa-edit"> </i> </span>
+								</button>
+							</ng-template>
+						</ngx-datatable-column>
+					</ngx-datatable>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<ng-template #edit>
+    <div class=" modal-header bg-default ">
+        <h6 class=" modal-title text-white" id="modal-title-default">
+            View User Detail
+        </h6>
+  
+        <button
+          aria-label="Close"
+          class=" close"
+          data-dismiss="modal"
+          type="button"
+          (click)="modalRef.hide()"
+        >
+          <span aria-hidden="true"> × </span>
+        </button>
+    </div>
+
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="form-control-label"> Name </label>
+                    <input
+                        class=" form-control"
+                        id="example-text-input"
+                        type="text"
+                        placeholder="Type here.."
+                    />   
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <label class="form-control-label"> Email </label>
+                    <input
+						class=" form-control"
+						id="example-email-input"
+						type="email"
+						placeholder="argon@example.com"
+					/> 
+                </div>
+            </div><div class="col-lg-12">
+                <div class="form-group">
+                    <label class="form-control-label"> Password </label>
+						<input
+						class=" form-control"
+						id="example-password-input"
+						type="password"
+						placeholder="password"
+					/>   
+                </div>
+            </div><div class="col-lg-12">
+                <div class="form-group">
+                    <label class="form-control-label"> ID </label>
+                    <input
+                        class=" form-control"
+                        id="example-text-input"
+                        type="text"
+                        placeholder="John Snow"
+                    />   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" modal-footer">
+        <button 
+            class=" btn btn-default text-white" 
+            type="button" 
+            class="btn btn-success"
+            (click)="successSwal()"
+        >
+            Edit
+	    </button>
+        <button
+            class=" btn btn-link btn-outline-danger ml-auto text-danger"
+            data-dismiss="modal"
+            type="button"
+            (click)="delete()"
+        >
+            Delete
+        </button>
+	</div>
+</ng-template>

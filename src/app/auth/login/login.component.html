@@ -1,10 +1,15 @@
 <ngx-loading-bar></ngx-loading-bar>
-<div class="main-content auth-content d-flex align-items-center mt-4">
+<div class="main-content auth-content d-flex align-items-center mt-4 mb-4">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-5 col-md-7">
                 <div class="card bg-secondary border-0 mb-0">
                     <div class="card-body px-lg-5 py-lg-5">
+                        <div class="text-right">
+                            <button class=" btn btn-icon btn-outline-primary my-2" type="button" title="Home" (click)="goPageMain()">
+                                <span class=" btn-inner--icon"> <i class=" fas fa-home"> </i> </span>
+                            </button>
+                        </div>
                         <div class="logo-box">
 							<img class="logo" [src]="imgLogo">
 						</div>
@@ -57,20 +62,25 @@
                                 </div>
                             </div>
 
-                            <div class="input-group-prepend">
-                                <span class="input-group-text bg-primary">
-                                    <h5>OTP Request</h5>
-                                </span>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <button class="btn btn-primary text-white" type="button"> OTP Request </button>
+                                    <!-- <span class="input-group-text text bg-primary">
+                                        <h5 class="text-white">OTP Request</h5>
+                                        
+                                    </span> -->
+                                    <!-- <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"> -->
+                                </div>
+                                <input
+                                        class=" form-control"
+                                        id="example-password-input"
+                                        type="password"
+                                        placeholder="0000"
+                                        aria-label=""
+                                        aria-describedby="basic-addon1"
+                                />
                             </div>
-                            <input 
-                                class="form-control"
-                                placeholder="xxxxxx"
-                                type="password"
-                                formControlName="password"
-                                (focus)="focusPassword = true" 
-                                (blur)="focusPassword = false"
-                            />
-
+                            
                             <div class="row">
 								<div class="col-6">
 									<div class="custom-control custom-control-alternative custom-checkbox">

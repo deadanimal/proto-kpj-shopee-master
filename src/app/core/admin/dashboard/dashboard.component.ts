@@ -77,7 +77,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     categoryAxis.renderer.grid.template.location = 0;
     categoryAxis.dataItems.template.text = "{realName}";
     categoryAxis.adapter.add("tooltipText", function(tooltipText, target){
-      return categoryAxis.tooltipDataItem.dataContext.realName;
+      let abc = categoryAxis.tooltipDataItem.dataContext as any;
+      return abc.realName;
     })
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -112,8 +113,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
     // when data validated, adjust location of data item based on count
     lineSeries.events.on("datavalidated", function(){
     lineSeries.dataItems.each(function(dataItem){
+      let wasd = dataItem.dataContext as any;
       // if count divides by two, location is 0 (on the grid)
-      if(dataItem.dataContext.count / 2 == Math.round(dataItem.dataContext.count / 2)){
+      if(wasd.count / 2 == Math.round(wasd.count / 2)){
       dataItem.setLocation("categoryX", 0);
       }
       // otherwise location is 0.5 (middle)
@@ -125,7 +127,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     // fill adapter, here we save color value to colors object so that each time the item has the same name, the same color is used
     columnSeries.columns.template.adapter.add("fill", function(fill, target) {
-    let name = target.dataItem.dataContext.realName;
+    let qwert = target.dataItem.dataContext as any;
+    let name = qwert.realName;
     if (!colors[name]) {
       colors[name] = chart.colors.next();
     }
@@ -210,7 +213,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     range.label.tooltipText = tempArray[0].provider;
 
     range.label.adapter.add("maxWidth", function(maxWidth, target){
-      let range = target.dataItem;
+      let range = target.dataItem as any;
       let startPosition = categoryAxis.categoryToPosition(range.category, 0);
       let endPosition = categoryAxis.categoryToPosition(range.endCategory, 1);
       let startX = categoryAxis.positionToCoordinate(startPosition);
@@ -298,7 +301,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     categoryAxis.renderer.grid.template.location = 0;
     categoryAxis.dataItems.template.text = "{realName}";
     categoryAxis.adapter.add("tooltipText", function(tooltipText, target){
-      return categoryAxis.tooltipDataItem.dataContext.realName;
+      let try1 = categoryAxis.tooltipDataItem.dataContext as any;
+      return try1.realName;
     })
 
     let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
@@ -334,7 +338,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
     lineSeries.events.on("datavalidated", function(){
     lineSeries.dataItems.each(function(dataItem){
       // if count divides by two, location is 0 (on the grid)
-      if(dataItem.dataContext.count / 2 == Math.round(dataItem.dataContext.count / 2)){
+      let try2 = dataItem.dataContext as any
+      if(try2.count / 2 == Math.round(try2.count / 2)){
       dataItem.setLocation("categoryX", 0);
       }
       // otherwise location is 0.5 (middle)
@@ -346,7 +351,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
     // fill adapter, here we save color value to colors object so that each time the item has the same name, the same color is used
     columnSeries.columns.template.adapter.add("fill", function(fill, target) {
-    let name = target.dataItem.dataContext.realName;
+    let try3 = target.dataItem.dataContext as any;
+    let name = try3.realName;
     if (!colors[name]) {
       colors[name] = chart.colors.next();
     }
@@ -444,7 +450,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
     range.label.tooltipText = tempArray[0].provider;
 
     range.label.adapter.add("maxWidth", function(maxWidth, target){
-      let range = target.dataItem;
+      let range = target.dataItem as any;
       let startPosition = categoryAxis.categoryToPosition(range.category, 0);
       let endPosition = categoryAxis.categoryToPosition(range.endCategory, 1);
       let startX = categoryAxis.positionToCoordinate(startPosition);

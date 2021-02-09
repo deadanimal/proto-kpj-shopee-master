@@ -144,6 +144,7 @@ export class CustomerAccountComponent implements OnInit {
 
   // Modal
   modal: BsModalRef;
+  largemodal: BsModalRef;
   modalConfig = {
     keyboard: true,
     class: "modal-dialog-centered"
@@ -186,6 +187,10 @@ export class CustomerAccountComponent implements OnInit {
     this.modal = this.modalService.show(modalRef, this.modalConfig);
   }
 
+  lgModal(template: TemplateRef<any>) {
+    this.largemodal = this.modalService.show(template, {class: 'modal-lg'});
+  }
+
   closeModal() {
     this.modal.hide()
   }
@@ -198,6 +203,37 @@ export class CustomerAccountComponent implements OnInit {
       buttonsStyling: false,
       confirmButtonClass: "btn btn-success"
     });
+    this.largemodal.hide()
+  }
+
+  delete() {
+    swal.fire({
+      title: "Confirmation",
+      text: "Are you sure to delete this?",
+      type: "info",
+      buttonsStyling: false,
+      confirmButtonClass: "btn btn-info",
+      confirmButtonText: "Confirm",
+      showCancelButton: true,
+      cancelButtonClass: "btn btn-danger",
+      cancelButtonText: "Cancel"
+    }).then((result) => {
+      if (result.value) {
+        this.doneDelete()
+      }
+    })
+  }
+
+  doneDelete() {
+    swal.fire({
+      title: "Success",
+      text: "The data have been deleted!",
+      type: "success",
+      buttonsStyling: false,
+      confirmButtonClass: "btn btn-success",
+      confirmButtonText: "Close"
+    })
+    this.largemodal.hide()
   }
 
   getChartCustomerAccount1 () {
